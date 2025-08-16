@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – Usługi</title>
 <style>
-  /* Podstawowe style i zapobieganie przewijaniu poziomemu */
+  /* Podstawowe style i układ */
   body {
     margin: 0;
     padding: 0;
@@ -16,10 +16,9 @@
     background: url('tlo.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
-    overflow: hidden; /* wyłącz przewijanie */
+    overflow-x: hidden; /* wyłącz poziome przewijanie */
   }
 
-  /* Główny kontener rozszerzający się na całą wysokość */
   .container {
     flex: 1;
     display: flex;
@@ -30,14 +29,13 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
 
-  /* Wewnętrzny kontener z maksymalną szerokością */
   .center {
     width: 100%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    height: 100%; /* zajmuje całą wysokość kontenera */
-    overflow: auto; /* jeśli zawartość przekracza, można przewijać wewnątrz */
+    height: 100%;
+    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
   }
 
   /* Nagłówek */
@@ -50,20 +48,19 @@
     text-align: center;
   }
 
-  /* Logo */
   .logo-image {
     width: 80%;
     max-width: 300px;
     height: auto;
   }
 
-  /* Baner */
+  /* Baner - w pełni responsywny */
   .profesjonalne {
     width: 100%;
-    max-width: 1000px;
+    max-width: 100%;
     min-height: 150px;
     background: url('baner3.png') no-repeat center center;
-    background-size: cover;
+    background-size: contain; /* cały obraz się mieści */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,6 +69,7 @@
     box-sizing: border-box;
   }
 
+  /* Tekst w banerze */
   .profesjonalne span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -103,12 +101,12 @@
   /* Sekcje usług */
   section {
     padding: 10px;
-    flex: 1; /* żeby się rozciągało w dostępnej przestrzeni */
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
 
-  /* Obrazek + tekst - układ obok siebie */
+  /* Obrazek + tekst - układ obok siebie, responsywny */
   .img-text-container {
     display: flex;
     flex-wrap: wrap;
@@ -120,7 +118,6 @@
     width: 100%;
     max-width: 250px;
     height: auto;
-    flex-shrink: 0;
   }
   .img-text-container p {
     flex: 1;
