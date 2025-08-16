@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WBTech – O nas</title>
+<style>
+  /* Body jako flex kolumny, tak samo jak w index.html */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url('tlo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .center {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 2px solid white;
+    text-align: center;
+  }
+
+  /* Logo */
+  .logo-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: -80px;
+    z-index: 2;
+  }
+
+  .profesjonalne {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 200px;
+    background: url('baner3.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 50px;
+  }
+
+  .profesjonalne span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 10px;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+  }
+  nav a {
+    margin: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 10px 0;
+    border-top: none;
+    color: #fff;
+    background-color: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="center">
+    <div class="header">
+      <a href="index.html">
+        <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
+      </a>
+      <div class="profesjonalne">
+        <span></span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Usługi</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <section id="o-nas">
+      <h2>Nasze cele:</h2>
+      <p>- Najwyższa jakość oferowanych usług</p>
+	  <p>- Współpraca z firmami z braży</p>
+      <p>- Profesjonalna obsługa klienta</p>
+      <p>- Terminowa realizacja projektów</p>
+      <p>- Partnerskie i długofalowe relacje z klientami</p>
+	  <p>- Bezpieczeństwo i higiena pracy</p>
+    </section>
+
+    <footer class="footer">
+      © 2025 WBTech – Wszystkie prawa zastrzeżone
+    </footer>
+  </div>
+</div>
+</body>
+</html>

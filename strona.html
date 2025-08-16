@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WBTech - Zabezpieczenia p.poż i Elektryka</title>
+  <style>
+    /* Reset i podstawy */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    header img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    nav {
+      background: #0073e6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav-icons img {
+      height: 30px;
+      width: 30px;
+      filter: brightness(0) invert(1); /* Białe ikony */
+      cursor: pointer;
+      transition: filter 0.3s, transform 0.3s;
+    }
+    .nav-icons img:hover {
+      filter: brightness(0) invert(0.6);
+      transform: scale(1.2);
+    }
+    main {
+      flex: 1;
+      padding: 30px 15px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #004080;
+      border-bottom: 3px solid #0073e6;
+      padding-bottom: 5px;
+      font-size: 1.8rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+    }
+    /* Formularz kontaktowy */
+    form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0073e6;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    /* Responsywność */
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+        gap: 15px;
+        padding: 10px 10px;
+      }
+      nav a {
+        margin: 8px 10px;
+      }
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/50x50.png?text=WB" alt="Logo WBTech" />
+    <div>
+      <h1>WBTech</h1>
+      <p>Profesjonalne zabezpieczenia p.poż i usługi elektryczne</p>
+    </div>
+  </header>
+
+  <nav>
+    <div>
+      <a href="#uslugi">Usługi</a>
+      <a href="#o-nas">O nas</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <div class="nav-icons" aria-label="Ikony urządzeń zabezpieczeń">
+      <!-- Czujnik dymu -->
+      <img src="https://cdn-icons-png.flaticon.com/512/2026/2026114.png" alt="Czujnik dymu" title="Czujnik dymu" />
+      <!-- Centrala pożarowa -->
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Centrala pożarowa" title="Centrala pożarowa" />
+      <!-- Schrack (symbol elektryki) -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Schrack_Logo.svg/512px-Schrack_Logo.svg.png" alt="Schrack" title="Schrack - instalacje elektryczne" style="filter:none; height: 30px; width:auto;" />
+      <!-- Przycisk ROP (ręczny ostrzegacz pożarowy) -->
+      <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="Przycisk ROP" title="Ręczny ostrzegacz pożarowy" />
+    </div>
+  </nav>
+
+  <main>
+    <section id="uslugi">
+      <h2>Nasze Usługi</h2>
+      <h3>Zabezpieczenia przeciwpożarowe</h3>
+      <ul>
+        <li>Instalacja i konserwacja systemów alarmowych p.poż</li>
+        <li>Systemy detekcji dymu i gazów</li>
+        <li>Przeglądy i serwis urządzeń przeciwpożarowych</li>
+      </ul>
+
+      <h3>Usługi elektryczne</h3>
+      <ul>
+        <li>Instalacje elektryczne w domach i firmach</li>
+        <li>Modernizacja i naprawa instalacji</li>
+        <li>Pomiar i diagnostyka instalacji elektrycznych</li>
+      </ul>
+    </section>
+
+    <section id="o-nas">
+      <h2>O nas</h2>
+      <p>Jesteśmy firmą z wieloletnim doświadczeniem w branży zabezpieczeń przeciwpożarowych oraz elektryce. 
+      Naszym celem jest zapewnienie najwyższej jakości usług, bezpieczeństwa oraz pełnej satysfakcji klienta.</p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Masz pytania lub chcesz zamówić usługę? Skontaktuj się z nami!</p>
+      <form id="contactForm">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Adres e-mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Wyślij</button>
+      </form>
+      <p id="formStatus" style="color: green; font-weight: 600;"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 WBTech. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script>
+    // Prosty skrypt obsługi formularza (tylko symulacja wysłania)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      status.textContent = 'Dziękujemy za wiadomość! Skontaktujemy się wkrótce.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
