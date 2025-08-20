@@ -5,51 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – Usługi</title>
 <style>
-/* Globalne style */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: url('tlo.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  overflow-x: hidden;
-}
+  /* Podstawowe style i układ */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url('tlo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow-x: hidden; /* wyłącz poziome przewijanie */
+  }
 
-.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 0;
-  margin: 0;
-  background-color: rgba(0,0,0,0.6);
-}
+  .container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 
-.center {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: auto;
-  padding: 0 10px;
-}
+  .center {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
+  }
 
-/* Nagłówek */
+ /* Nagłówek */
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px 0;
   text-align: center;
-}
+
+  }
 
 /* Logo */
 .logo-image {
@@ -57,9 +54,9 @@ body {
   max-width: 300px;
   height: auto;
   margin: 0;
-}
+  }
 
-/* Baner z animacją napisu */
+/* Baner */
 .profesjonalne {
   width: 100%;
   height: 30vh;
@@ -72,113 +69,105 @@ body {
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-.profesjonalne span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  line-height: 1.4;
-  position: absolute;
-  animation: moveText 6s linear infinite;
 }
 
-/* animacja przesuwania tekstu */
-@keyframes moveText {
-  0% { transform: translateY(100%); opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  40% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(-100%); opacity: 0; }
-  100% { transform: translateY(-100%); opacity: 0; }
-}
+  /* Tekst w banerze */
+  .profesjonalne span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.4;
+    text-align: center;
+  }
 
-/* Nawigacja */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px 0;
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
-}
-nav a {
-  margin: 8px 12px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-nav a:hover {
-  text-decoration: underline;
-}
+  /* Nawigacja */
+   nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+  }
+  nav a {
+    margin: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  
+  }
 
-/* Sekcja usług */
-section {
-  padding: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.img-text-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  gap: 10px;
-}
-.img-text-container img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-}
-.img-text-container p {
-  flex: 1;
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
+  /* Sekcje usług */
+  section {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* Stopka */
-.footer {
-  text-align: center;
-  font-size: 0.8em;
-  padding: 10px;
-  border-top: 1px solid white;
-  background-color: transparent;
-}
+  /* Obrazek + tekst - układ obok siebie, responsywny */
+  .img-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  .img-text-container img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+  .img-text-container p {
+    flex: 1;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 
-/* Responsywność */
+  /* Stopka */
+  .footer {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+    border-top: 1px solid white;
+    background-color: transparent;
+  }
+
+  /* Responsywność */
 @media (max-width: 600px) {
   .profesjonalne {
     height: 20vh;
     min-height: 120px;
     padding: 10px;
   }
-  .img-text-container img {
-    max-width: 150px;
+
+    .img-text-container img {
+      max-width: 150px;
+    }
+    .profesjonalne span {
+      font-size: 1.2rem;
+    }
+    nav a {
+      font-size: 0.8rem;
+    }
   }
-  .profesjonalne span {
-    font-size: 1.2rem;
-  }
-  nav a {
-    font-size: 0.8rem;
-  }
-}
 </style>
 </head>
 <body>
 <div class="container">
   <div class="center">
-
     <!-- Nagłówek -->
     <div class="header">
       <a href="index.html">
         <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
       </a>
       <div class="profesjonalne">
-        <span>Profesjonalne systemy przeciwpożarowe i elektryczne</span>
+        <span></span>
       </div>
     </div>
 
@@ -189,61 +178,62 @@ section {
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
-    <!-- Sekcja usług (pełne obrazki i teksty) -->
+    <!-- Sekcja usług -->
     <section id="uslugi" style="overflow:auto;">
       <h2>Nasze usługi</h2>
       <p>Oferujemy kompleksowe rozwiązania z zakresu ochrony przeciwpożarowej – od projektu po montaż, serwis i konserwacje.</p>
 
+      <!-- Przykład obrazka z opisem -->
       <div class="img-text-container">
         <img src="pozar.jpg" alt="Systemy sygnalizacji pożaru" />
-        <p><b><font color=red>Systemy sygnalizacji pożaru (SSP)</font></b> to instalacje służące do wykrywania, sygnalizowania i powiadamiania o zagrożeniu pożarowym...</p>
+        <p><b><font color=red>Systemy sygnalizacji pożaru (SSP)</font></b> to instalacje służące do wykrywania, sygnalizowania i powiadamiania o zagrożeniu pożarowym. Ich głównym celem jest wczesne wykrycie pożaru, uruchomienie alarmu i podjęcie odpowiednich działań, takich jak ewakuacja czy uruchomienie systemów gaśniczych, co minimalizuje skutki pożaru.</p>
       </div>
 
       <div class="img-text-container">
         <img src="oddymianie.jpg" alt="Systemy oddymiania" />
-        <p><b><font color=red>Systemy oddymiania</font></b> to instalacje przeciwpożarowe, których zadaniem jest usuwanie dymu i gorących gazów...</p>
+        <p><b><font color=red>Systemy oddymiania</font></b> to instalacje przeciwpożarowe, których zadaniem jest usuwanie dymu i gorących gazów z dróg ewakuacyjnych i pomieszczeń w przypadku pożaru. Są one kluczowe dla zapewnienia bezpiecznej ewakuacji ludzi i ułatwienia pracy służb ratowniczych. Systemy te mogą być grawitacyjne, wykorzystujące naturalną różnicę gęstości dymu i powietrza, lub mechaniczne, wspomagane wentylatorami.</p>
       </div>
 
       <div class="img-text-container">
         <img src="DSO.jpg" alt="System Dźwiękowy System Ostrzegawczy" />
-        <p><b><font color=red>DSO</font></b> to system nagłośnienia w budynkach, który rozgłasza komunikaty ostrzegawcze i głosowe...</p>
+        <p><b><font color=red>Systemy Dźwiękowy System Ostrzegawczy (DSO)</font></b> to system nagłośnienia w budynkach, który rozgłasza komunikaty ostrzegawcze i głosowe, najczęściej w przypadku zagrożenia pożarowego. System ten jest wymagany w wielu obiektach użyteczności publicznej, takich jak centra handlowe, kina, teatry, szpitale, a także w budynkach wysokich i wysokościowych. DSO ma za zadanie informować osoby przebywające w budynku o zagrożeniu i kierować je do wyjść ewakuacyjnych.</p>
       </div>
 
       <div class="img-text-container">
         <img src="gaszenie.jpg" alt="System gaszenia gazem" />
-        <p><b><font color=red>Systemy gaszenia gazem</font></b> automatyczne systemy przeciwpożarowe wykorzystujące gazy do gaszenia pożarów...</p>
+        <p><b><font color=red>Systemy gaszenia gazem</font></b> to automatyczne systemy przeciwpożarowe, które wykorzystują gazy do gaszenia pożarów w miejscach, gdzie użycie wody lub innych tradycyjnych środków gaśniczych byłoby szkodliwe lub nieodpowiednie. Są one powszechnie stosowane w serwerowniach, centrach danych, archiwach, muzeach i innych pomieszczeniach, gdzie ochrona cennych urządzeń i materiałów jest priorytetem.</p>
       </div>
 
       <div class="img-text-container">
         <img src="cctv.jpg" alt="CCTV" />
-        <p><b><font color=red>CCTV</font></b> czyli system monitoringu wizyjnego...</p>
+        <p><b><font color=red>CCTV</font></b> czyli system monitoringu wizyjnego, który służy do rejestrowania i przesyłania obrazu z kamer do jednego lub wielu odbiorników, zazwyczaj w celu nadzoru i bezpieczeństwa.</p>
       </div>
 
       <div class="img-text-container">
         <img src="sswin.jpg" alt="SSWIN" />
-        <p><b><font color=red>SSWIN</font></b> System sygnalizacji włamania i napadu...</p>
+        <p><b><font color=red>SSWIN</font></b> System sygnalizacji włamania i napadu (SSWiN) to zabezpieczenie, które informuje nas o nieautoryzowanym wtargnięciu do naszego domu, mieszkania, firmowego biura lub innego ochranianego obiektu. Jest to rodzaj systemu alarmowego, który służy ochronie osób i mienia przed skutkami działań włamywaczy.</p>
       </div>
 
       <div class="img-text-container">
         <img src="kontrola.jpg" alt="Kontrola dostepu" />
-        <p><b><font color=red>Kontrola dostępu</font></b> to technologia zapewniająca kontrolę nad tym, kto ma dostęp do określonego obszaru...</p>
+        <p><b><font color=red>Kontrola dostępu</font></b> to technologia zapewniająca kontrolę nad tym, kto ma dostęp do określonego obszaru czy budynku. W praktyce drzwi z kontrolą dostępu mogą być dostosowane do specyficznych wymagań, umożliwiając tym samym skuteczne zarządzanie bezpieczeństwem.</p>
       </div>
 
       <div class="img-text-container">
         <img src="gasnica.jpg" alt="gasnice" />
-        <p><b><font color=red>Gaśnice i hydranty</font></b> to podstawowe elementy ochrony przeciwpożarowej...</p>
+        <p><b><font color=red>Gaśnice i hydranty</font></b> to podstawowe elementy ochrony przeciwpożarowej. Gaśnice to przenośne urządzenia służące do gaszenia pożarów w zarodku, najczęściej za pomocą proszku, piany lub dwutlenku węgla. Hydranty, z kolei, to punkty poboru wody z sieci wodociągowej, umożliwiające strażakom podłączenie węży i skuteczne gaszenie pożaru. Oba te urządzenia są niezbędne w budynkach użyteczności publicznej, mieszkalnych i przemysłowych.</p>
       </div>
 
       <div class="img-text-container">
-        <img src="elektryka.jpg" alt="elektryka" />
-        <p><b><font color=red>Instalacje elektryczne</font></b> są kluczowe dla funkcjonowania budynków i urządzeń...</p>
+        <img src="elektryka.jpg" alt="elektryka" /> 
+        <p><b><font color=red>Instalacje elektryczne</font></b>  są kluczowe dla funkcjonowania budynków i urządzeń w nich się znajdują. Bez sprawnej instalacji elektrycznej niemożliwe jest korzystanie z oświetlenia, ogrzewania, urządzeń AGD i innych sprzętów elektrycznych. <br>
+        - wykonujemy instalacje domowe jak i przemysłowe. Nowe, modernizacje starych, montaż urządzeń i pomiary.</p>
       </div>
 
       <div class="img-text-container">
-        <img src="awaryjne.jpg" alt="oswietlenie" />
-        <p><b><font color=red>Oświetlenie awaryjne i ewakuacyjne</font></b> to system zapewniający światło awaryjne w sytuacjach awaryjnych...</p>
+        <img src="awaryjne.jpg" alt="oswietlenie" />			
+        <p><b><font color=red>Oświetlenie awaryjne i ewakuacyjne</font></b>  to system, który zapewnia światło awaryjne w sytuacjach, gdy zasilanie podstawowe zostaje przerwane. Oprawy oświetlenia awaryjnego działają na zasadzie automatycznego przełączenia na źródło zasilania rezerwowego (najczęściej wbudowanych baterii) w momencie awarii sieci zasilającej</p>
       </div>
-
     </section>
 
     <!-- Stopka -->
