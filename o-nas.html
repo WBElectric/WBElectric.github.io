@@ -5,48 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – O nas</title>
 <style>
-  /* Podstawowe style i układ */
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: url('tlo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow-x: hidden; /* wyłącz poziome przewijanie */
-  }
+/* Globalne style i box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-  .container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    padding: 0;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+/* Podstawowe style i układ */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('tlo.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden; /* wyłącz poziome przewijanie */
+}
 
-  .center {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
-  }
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
- /* Nagłówek */
+.center {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: hidden; /* zapobiega przewijaniu poziomemu */
+  padding: 0 10px; /* minimalny padding po bokach */
+}
+
+/* Nagłówek */
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px 0;
   text-align: center;
-
-  }
+}
 
 /* Logo */
 .logo-image {
@@ -54,7 +59,7 @@
   max-width: 300px;
   height: auto;
   margin: 0;
-  }
+}
 
 /* Baner */
 .profesjonalne {
@@ -68,43 +73,52 @@
   justify-content: center;
   margin: 0;
   padding: 20px;
-  box-sizing: border-box;
 }
 
-  /* Tekst w banerze */
-  .profesjonalne span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    line-height: 1.4;
-    text-align: center;
-  }
+.profesjonalne span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.4;
+  text-align: center;
+}
 
-  /* Nawigacja */
-   nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 10px 0;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-  nav a {
-    margin: 8px 12px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
+/* Nawigacja */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+nav a {
+  margin: 8px 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
 
-  /* Treść */
-  section {
-    margin-bottom: 20px;
-  }
-  /* Responsywność */
+/* Treść */
+section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Stopka */
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 10px;
+  border-top: 1px solid white;
+  background-color: transparent;
+}
+
+/* Responsywność */
 @media (max-width: 600px) {
   .profesjonalne {
     height: 20vh;
@@ -112,23 +126,14 @@
     padding: 10px;
   }
 
-    .img-text-container img {
-      max-width: 150px;
-    }
-    .profesjonalne span {
-      font-size: 1.2rem;
-    }
-    nav a {
-      font-size: 0.8rem;
-    }
-  /* Stopka */
-  .footer {
-    margin-top: auto;
-    text-align: center;
-    font-size: 0.9em;
-    padding: 10px 0;
-    color: #fff;
+  .profesjonalne span {
+    font-size: 1.2rem;
   }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -139,11 +144,10 @@
       <a href="index.html">
         <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
       </a>
-    
-    <!-- Baner -->
-    <div class="profesjonalne">
-      <span></span>
-    </div></div>
+      <div class="profesjonalne">
+        <span></span>
+      </div>
+    </div>
 
     <!-- Menu -->
     <nav>
@@ -167,7 +171,6 @@
     <footer class="footer">
       © 2025 WBTech – Wszystkie prawa zastrzeżone
     </footer>
-
   </div>
 </div>
 </body>
