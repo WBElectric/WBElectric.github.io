@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – Kontakt</title>
 <style>
+/* Podstawowe style i układ */
   body {
     margin: 0;
     padding: 0;
@@ -15,14 +16,17 @@
     background: url('tlo.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+    overflow-x: hidden; /* wyłącz poziome przewijanie */
   }
 
   .container {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding: 20px;
-    background-color: rgba(0,0,0,0.6);
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   .center {
@@ -30,68 +34,87 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
   }
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 2px solid white;
+ /* Nagłówek */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+
+  }
+
+/* Logo */
+.logo-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0;
+  }
+
+/* Baner */
+.profesjonalne {
+  width: 100%;
+  height: 30vh;
+  min-height: 200px;
+  background: url('baner3.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+  /* Tekst w banerze */
+  .profesjonalne span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.4;
     text-align: center;
   }
 
-  /* Logo */
-  .logo-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: -80px;
-    z-index: 2;
-  }
-
-  .profesjonalne {
-    width: 100%;
-    max-width: 1000px;
-    min-height: 200px;
-    background: url('baner3.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    padding: 50px;
-  }
-
-  nav {
+  /* Nawigacja */
+   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px 0;
+    margin: 10px 0;
     border-bottom: 1px solid white;
     padding-bottom: 10px;
   }
-
   nav a {
-    margin: 10px 15px;
+    margin: 8px 12px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   nav a:hover {
     text-decoration: underline;
+  
   }
 
+  /* Sekcja kontaktowa */
   section {
-    margin-bottom: 20px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .form-container {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    align-items: flex-start; /* ustawiamy do góry */
+    align-items: flex-start;
+    margin-top: 20px;
   }
 
   form, .contact-info {
@@ -102,14 +125,13 @@
   }
 
   .contact-info {
-    background-color: none;
     padding: 20px;
     border-radius: 5px;
-    justify-content: flex-start; /* dane kontaktowe na górze */
+    justify-content: flex-start;
   }
 
   .contact-info h3 {
-    font-size: 2rem; /* taka sama wielkość jak <h2> Kontakt */
+    font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 15px;
   }
@@ -135,20 +157,31 @@
     background-color: #005fa3;
   }
 
+  /* Stopka */
   .footer {
-    margin-top: auto;
     text-align: center;
-    font-size: 0.9em;
-    padding: 10px 0;
-    color: #fff;
+    font-size: 0.8em;
+    padding: 10px;
+    border-top: 1px solid white;
+    background-color: transparent;
   }
 
-  @media (max-width: 800px) {
-    .form-container {
-      flex-direction: column;
+    /* Responsywność */
+@media (max-width: 600px) {
+  .profesjonalne {
+    height: 20vh;
+    min-height: 120px;
+    padding: 10px;
+  }
+
+    .img-text-container img {
+      max-width: 150px;
     }
-    button {
-      align-self: stretch;
+    .profesjonalne span {
+      font-size: 1.2rem;
+    }
+    nav a {
+      font-size: 0.8rem;
     }
   }
 </style>
@@ -156,22 +189,28 @@
 <body>
 <div class="container">
   <div class="center">
+    <!-- Nagłówek -->
     <div class="header">
       <a href="index.html">
         <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
       </a>
-      <div class="profesjonalne"><span></span></div>
+      <div class="profesjonalne">
+        <span></span>
+      </div>
     </div>
 
+    <!-- Menu -->
     <nav>
       <a href="index.html">Usługi</a>
       <a href="o-nas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
+    <!-- Sekcja kontaktowa -->
     <section id="kontakt">
-      <h2>Kontakt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dane kontaktowe</h2>
+      <h2>Kontakt</h2>
       <div class="form-container">
+        <!-- Formularz -->
         <form action="send_mail.php" method="post">
           <label>Imię i nazwisko:</label>
           <input type="text" name="name" required>
@@ -188,16 +227,18 @@
           <button type="submit">Wyślij</button>
         </form>
 
+        <!-- Dane kontaktowe -->
         <div class="contact-info">
-         
-          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:</b> kontakt@wbtech.pl</p>
-          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telefon:</b> </p>
-          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adres:</b> ul. Bolesława Chrobrego 5B 15-057 Białystok</p>
-          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Godziny pracy:</b> Pon-Pt 8:00-16:00</p>
+          <h3>Dane kontaktowe</h3>
+          <p><b>Email:</b> kontakt@wbtech.pl</p>
+          <p><b>Telefon:</b> </p>
+          <p><b>Adres:</b> ul. Bolesława Chrobrego 5B, 15-057 Białystok</p>
+          <p><b>Godziny pracy:</b> Pon–Pt 8:00–16:00</p>
         </div>
       </div>
     </section>
 
+    <!-- Stopka -->
     <footer class="footer">
       © 2025 WBTech – Wszystkie prawa zastrzeżone
     </footer>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – O nas</title>
 <style>
-  /* Body jako flex kolumny, tak samo jak w index.html */
+  /* Podstawowe style i układ */
   body {
     margin: 0;
     padding: 0;
@@ -16,13 +16,16 @@
     background: url('tlo.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+    overflow-x: hidden; /* wyłącz poziome przewijanie */
   }
 
   .container {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -31,114 +34,140 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
   }
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 2px solid white;
-    text-align: center;
+ /* Nagłówek */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+
   }
 
-  /* Logo */
-  .logo-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: -80px;
-    z-index: 2;
+/* Logo */
+.logo-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0;
   }
 
-  .profesjonalne {
-    width: 100%;
-    max-width: 1000px;
-    min-height: 200px;
-    background: url('baner3.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    padding: 50px;
-  }
+/* Baner */
+.profesjonalne {
+  width: 100%;
+  height: 30vh;
+  min-height: 200px;
+  background: url('baner3.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
+  /* Tekst w banerze */
   .profesjonalne span {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
     line-height: 1.4;
     text-align: center;
-    padding: 0 10px;
-    z-index: 1;
   }
 
-  nav {
+  /* Nawigacja */
+   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px 0;
+    margin: 10px 0;
     border-bottom: 1px solid white;
     padding-bottom: 10px;
   }
   nav a {
-    margin: 10px 15px;
+    margin: 8px 12px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   nav a:hover {
     text-decoration: underline;
   }
 
+  /* Treść */
   section {
     margin-bottom: 20px;
   }
+  /* Responsywność */
+@media (max-width: 600px) {
+  .profesjonalne {
+    height: 20vh;
+    min-height: 120px;
+    padding: 10px;
+  }
 
+    .img-text-container img {
+      max-width: 150px;
+    }
+    .profesjonalne span {
+      font-size: 1.2rem;
+    }
+    nav a {
+      font-size: 0.8rem;
+    }
+  /* Stopka */
   .footer {
     margin-top: auto;
     text-align: center;
     font-size: 0.9em;
     padding: 10px 0;
-    border-top: none;
     color: #fff;
-    background-color: none;
   }
 </style>
 </head>
 <body>
 <div class="container">
   <div class="center">
+    <!-- Nagłówek -->
     <div class="header">
       <a href="index.html">
         <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
       </a>
-      <div class="profesjonalne">
-        <span></span>
-      </div>
-    </div>
+    
+    <!-- Baner -->
+    <div class="profesjonalne">
+      <span></span>
+    </div></div>
 
+    <!-- Menu -->
     <nav>
       <a href="index.html">Usługi</a>
       <a href="o-nas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
+    <!-- Treść -->
     <section id="o-nas">
       <h2>Nasze cele:</h2>
       <p>- Najwyższa jakość oferowanych usług</p>
-	  <p>- Współpraca z firmami z braży</p>
+      <p>- Współpraca z firmami z branży</p>
       <p>- Profesjonalna obsługa klienta</p>
       <p>- Terminowa realizacja projektów</p>
       <p>- Partnerskie i długofalowe relacje z klientami</p>
-	  <p>- Bezpieczeństwo i higiena pracy</p>
+      <p>- Bezpieczeństwo i higiena pracy</p>
     </section>
 
+    <!-- Stopka -->
     <footer class="footer">
       © 2025 WBTech – Wszystkie prawa zastrzeżone
     </footer>
+
   </div>
 </div>
 </body>
