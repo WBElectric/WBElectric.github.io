@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – O nas</title>
 <style>
-/* Globalne style i box-sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /* Podstawowe style i układ */
 body {
   margin: 0;
@@ -40,8 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow-x: auto; /* zapobiega przewijaniu poziomemu */
-  padding: 0 10px; /* minimalny padding po bokach */
+  overflow: auto; /* spójnie z innymi stronami */
 }
 
 /* Nagłówek */
@@ -73,6 +67,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .profesjonalne span {
@@ -111,6 +106,12 @@ section {
   flex-direction: column;
 }
 
+section p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 /* Stopka */
 .footer {
   text-align: center;
@@ -120,23 +121,19 @@ section {
   background-color: transparent;
 }
 
-    /* Responsywność */
+/* Responsywność */
 @media (max-width: 600px) {
   .profesjonalne {
     height: 20vh;
     min-height: 120px;
     padding: 10px;
   }
-
-    .img-text-container img {
-      max-width: 150px;
-    }
-    .profesjonalne span {
-      font-size: 1.2rem;
-    }
-    nav a {
-      font-size: 0.8rem;
-    }
+  .profesjonalne span {
+    font-size: 1.2rem;
+  }
+  nav a {
+    font-size: 0.8rem;
+  }
 }
 </style>
 </head>
@@ -162,15 +159,13 @@ section {
 
     <!-- Treść -->
     <section id="o-nas">
-      <h2>Nasze cele:</h2>
-	  <div class="form-container">
+      <h2>Nasze cele</h2>
       <p>- Najwyższa jakość oferowanych usług</p>
       <p>- Współpraca z firmami z branży</p>
       <p>- Profesjonalna obsługa klienta</p>
       <p>- Terminowa realizacja projektów</p>
       <p>- Partnerskie i długofalowe relacje z klientami</p>
       <p>- Bezpieczeństwo i higiena pracy</p>
-	  </div>
     </section>
 
     <!-- Stopka -->
