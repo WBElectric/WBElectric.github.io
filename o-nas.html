@@ -1,178 +1,127 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>WBTech – O nas</title>
-<style>
-/* Podstawowe style i układ */
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: url('tlo.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  overflow-x: hidden; /* wyłącz poziome przewijanie */
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WBTech – O nas</title>
+  <style>
+    /* Reset i układ bazowy */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('tlo.png') no-repeat center center fixed;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
 
-.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 0;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
+    .center {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow: auto;
+      padding: 0;
+      scrollbar-gutter: stable; /* stabilny pasek przewijania */
+    }
+    @supports not (scrollbar-gutter: stable) {
+      .center { overflow-y: scroll; } /* fallback */
+    }
 
-.center {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: auto; /* spójnie z innymi stronami */
-}
+    header {
+      background: #004080;
+      padding: 10px 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Nagłówek */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px 0;
-  text-align: center;
-}
+    /* Baner */
+    .profesjonalne {
+      width: 100%;
+      height: 30vh;
+      min-height: 200px;
+      background: url('baner3.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .profesjonalne h1 {
+      color: white;
+      font-size: 2em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 0;
+    }
 
-/* Logo */
-.logo-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  margin: 0;
-}
+    main {
+      flex: 1;
+      padding: 20px;
+    }
 
-/* Baner */
-.profesjonalne {
-  width: 100%;
-  height: 30vh;
-  min-height: 200px;
-  background: url('baner3.png') no-repeat center center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.profesjonalne span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* Nawigacja */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px 0;
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
-}
-nav a {
-  margin: 8px 12px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Treść */
-section {
-  padding: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-section p {
-  margin: 5px 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* Stopka */
-.footer {
-  text-align: center;
-  font-size: 0.8em;
-  padding: 10px;
-  border-top: 1px solid white;
-  background-color: transparent;
-}
-
-/* Responsywność */
-@media (max-width: 600px) {
-  .profesjonalne {
-    height: 20vh;
-    min-height: 120px;
-    padding: 10px;
-  }
-  .profesjonalne span {
-    font-size: 1.2rem;
-  }
-  nav a {
-    font-size: 0.8rem;
-  }
-}
-</style>
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
   <div class="center">
-    <!-- Nagłówek -->
-    <div class="header">
-      <a href="index.html">
-        <img src="wbelectric1.png" alt="Logo WBTech" class="logo-image" />
-      </a>
-      <div class="profesjonalne">
-        <span></span>
-      </div>
+    <header>
+      <nav>
+        <a href="index.html">Usługi</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </header>
+
+    <div class="profesjonalne">
+      <h1>O nas</h1>
     </div>
-	
-    <!-- Menu -->
-    <nav>
-      <a href="index.html">Usługi</a>
-      <a href="o-nas.html">O nas</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
 
-    <!-- Treść -->
-    <section id="o-nas">
-      <h2>Nasze cele</h2>
-      <p>- Najwyższa jakość oferowanych usług</p>
-      <p>- Współpraca z firmami z branży</p>
-      <p>- Profesjonalna obsługa klienta</p>
-      <p>- Terminowa realizacja projektów</p>
-      <p>- Partnerskie i długofalowe relacje z klientami</p>
-      <p>- Bezpieczeństwo i higiena pracy</p>
-    </section>
+    <main>
+      <h2>WBTech – Profesjonalne systemy przeciwpożarowe i elektryczne</h2>
+      <p>
+        Nasza firma powstała z pasji do tworzenia nowoczesnych i bezpiecznych instalacji. 
+        Specjalizujemy się w systemach przeciwpożarowych oraz elektrycznych, 
+        dostarczając kompleksowe rozwiązania dla klientów indywidualnych i biznesowych.
+      </p>
 
-    <!-- Stopka -->
-    <footer class="footer">
-      © 2025 WBTech – Wszystkie prawa zastrzeżone
+      <h2>Dlaczego my?</h2>
+      <p>
+        Wyróżnia nas doświadczenie, profesjonalizm i indywidualne podejście do każdego projektu. 
+        Stawiamy na niezawodność, jakość wykonania i zgodność z obowiązującymi normami. 
+        Dzięki temu nasi klienci mogą być pewni, że otrzymują usługi na najwyższym poziomie.
+      </p>
+
+      <h2>Nasza misja</h2>
+      <p>
+        Celem WBTech jest zapewnienie bezpieczeństwa i komfortu użytkownikom naszych instalacji. 
+        Każdy projekt realizujemy z pełnym zaangażowaniem, dbając o detale oraz długoterminową satysfakcję klienta.
+      </p>
+    </main>
+
+    <footer>
+      &copy; 2025 WBTech – Wszystkie prawa zastrzeżone
     </footer>
   </div>
-</div>
 </body>
 </html>
