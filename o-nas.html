@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WBTech – O nas</title>
 <style>
+/* Podstawowe style i układ */
   body {
     margin: 0;
     padding: 0;
@@ -15,7 +16,7 @@
     background: url('tlo.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
-    overflow-x: hidden;
+    overflow-x: hidden; /* wyłącz poziome przewijanie */
   }
 
   .container {
@@ -23,6 +24,8 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
+    padding: 0;
+    margin: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -31,40 +34,44 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    height: 100%;
+    overflow: auto; /* w razie potrzeby przewijanie wewnątrz */
   }
 
-  /* Nagłówek */
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    text-align: center;
+ /* Nagłówek */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+
   }
 
-  .logo-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0;
+/* Logo */
+.logo-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0;
   }
 
-  /* Baner */
-  .profesjonalne {
-    width: 100%;
-    height: 30vh;
-    min-height: 200px;
-    background: url('baner3.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+/* Baner */
+.profesjonalne {
+  width: 100%;
+  height: 30vh;
+  min-height: 200px;
+  background: url('baner3.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
+  /* Tekst w banerze */
   .profesjonalne span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -74,7 +81,7 @@
   }
 
   /* Nawigacja */
-  nav {
+   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -91,27 +98,63 @@
   }
   nav a:hover {
     text-decoration: underline;
+  
   }
 
-  /* Treść */
+  /* Sekcja kontaktowa */
   section {
-    padding: 20px;
+    padding: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
+  }
+
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  form, .contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-info {
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: flex-start;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     box-sizing: border-box;
   }
 
-  section h2 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    border-bottom: 1px solid white;
-    padding-bottom: 5px;
+  button {
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
   }
 
-  section p {
-    margin: 6px 0;
-    font-size: 0.95rem;
+  button:hover {
+    background-color: #005fa3;
   }
 
   /* Stopka */
@@ -123,12 +166,16 @@
     background-color: transparent;
   }
 
-  /* Responsywność */
-  @media (max-width: 600px) {
-    .profesjonalne {
-      height: 20vh;
-      min-height: 120px;
-      padding: 10px;
+    /* Responsywność */
+@media (max-width: 600px) {
+  .profesjonalne {
+    height: 20vh;
+    min-height: 120px;
+    padding: 10px;
+  }
+
+    .img-text-container img {
+      max-width: 150px;
     }
     .profesjonalne span {
       font-size: 1.2rem;
